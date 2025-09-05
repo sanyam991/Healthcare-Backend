@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Portal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1d976c, #93f9b9);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        h1 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+        p {
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+        .btn {
+            background: #00c6ff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+        .btn:hover {
+            background: #0072ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Healthcare Portal</h1>
+        <p>Welcome to the Healthcare Management System.<br>
+           Please login to access your dashboard.</p>
+        <a href="/admin/login/" class="btn">Login</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+ERROR 2025-08-30 00:10:05,744 log 11512 20572 Internal Server Error: /admin/patients/patient/add/
+Traceback (most recent call last):
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "patients" does not exist
+LINE 1: SELECT 1 AS "a" FROM "patients" WHERE "patients"."email" = '...
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\contrib\admin\options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\contrib\admin\options.py", line 1792, in _changeform_view
+    form_validated = form.is_valid()
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\forms\forms.py", line 201, in is_valid
+    return self.is_bound and not self.errors
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\forms\forms.py", line 196, in errors
+    self.full_clean()
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\forms\forms.py", line 435, in full_clean
+    self._post_clean()
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\forms\models.py", line 492, in _post_clean
+    self.validate_unique()
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\forms\models.py", line 501, in validate_unique
+    self.instance.validate_unique(exclude=exclude)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\models\base.py", line 1229, in validate_unique
+    errors = self._perform_unique_checks(unique_checks)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\models\base.py", line 1339, in _perform_unique_checks
+    if qs.exists():
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\models\query.py", line 1241, in exists
+    return self.query.has_results(using=self.db)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\models\sql\query.py", line 598, in has_results
+    return compiler.has_results()
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\models\sql\compiler.py", line 1530, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "patients" does not exist
+LINE 1: SELECT 1 AS "a" FROM "patients" WHERE "patients"."email" = '...
+                             ^
+
+ERROR 2025-08-30 00:15:51,860 log 11512 24624 Internal Server Error: /admin/doctors/doctor/add/
+Traceback (most recent call last):
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "doctors" does not exist
+LINE 1: SELECT 1 AS "a" FROM "doctors" WHERE "doctors"."email" = 'ja...
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\contrib\admin\options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\contrib\admin\options.py", line 1792, in _changeform_view
+    form_validated = form.is_valid()
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\forms\forms.py", line 201, in is_valid
+    return self.is_bound and not self.errors
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\forms\forms.py", line 196, in errors
+    self.full_clean()
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\forms\forms.py", line 435, in full_clean
+    self._post_clean()
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\forms\models.py", line 492, in _post_clean
+    self.validate_unique()
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\forms\models.py", line 501, in validate_unique
+    self.instance.validate_unique(exclude=exclude)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\models\base.py", line 1229, in validate_unique
+    errors = self._perform_unique_checks(unique_checks)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\models\base.py", line 1339, in _perform_unique_checks
+    if qs.exists():
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\models\query.py", line 1241, in exists
+    return self.query.has_results(using=self.db)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\models\sql\query.py", line 598, in has_results
+    return compiler.has_results()
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\models\sql\compiler.py", line 1530, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "doctors" does not exist
+LINE 1: SELECT 1 AS "a" FROM "doctors" WHERE "doctors"."email" = 'ja...
+                             ^
+
+ERROR 2025-08-30 00:26:12,318 log 1060 3332 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\healthcare-backend\healthcare_backend\urls.py", line 8, in home
+    return render(request, "home.html")
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: home.html
+ERROR 2025-08-30 00:26:22,881 log 23696 12544 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\healthcare-backend\healthcare_backend\urls.py", line 8, in home
+    return render(request, "home.html")
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: home.html
+ERROR 2025-08-30 00:27:01,311 log 23696 12544 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\healthcare-backend\healthcare_backend\urls.py", line 8, in home
+    return render(request, "home.html")
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: home.html
+ERROR 2025-08-30 00:27:02,778 log 23696 12544 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\healthcare-backend\healthcare_backend\urls.py", line 8, in home
+    return render(request, "home.html")
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\healthcare-backend\healthcare_env\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: home.html
