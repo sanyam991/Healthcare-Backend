@@ -81,3 +81,57 @@ GET /api/mappings/ → Get all mappings
 GET /api/mappings/<patient_id>/ → Get doctors for a patient
 
 DELETE /api/mappings/<id>/ → Remove mapping
+
+
+⚙️ Installation & Setup
+1. Clone repository
+git clone https://github.com/<your-username>/healthcare-backend.git
+cd healthcare-backend
+
+2. Create virtual environment
+python -m venv venv
+venv\Scripts\activate    # on Windows
+source venv/bin/activate # on Linux/Mac
+
+3. Install dependencies
+pip install -r requirements.txt
+
+4. Configure environment variables
+
+Create a .env file in project root:
+
+SECRET_KEY=your-secret-key
+DEBUG=True
+DB_NAME=your_db_name
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
+DB_HOST=localhost
+DB_PORT=5432
+
+5. Apply migrations
+python manage.py migrate
+
+6. Run development server
+python manage.py runserver
+
+🧪 Testing APIs
+
+Use Postman or cURL to test endpoints.
+
+Example login request:
+
+POST /api/auth/login/
+{
+  "email": "user@example.com",
+  "password": "yourpassword"
+}
+
+📌 Future Enhancements
+
+Role-based permissions (Admin, Doctor, Patient).
+
+Pagination & filtering for APIs.
+
+Docker setup for easy deployment.
+
+Unit tests & CI pipeline with GitHub Actions.
